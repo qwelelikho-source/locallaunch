@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Clock, ShieldCheck, MapPin } from "lucide-react";
 
 export default function FfHero() {
@@ -53,7 +54,16 @@ export default function FfHero() {
         </div>
 
         <div className="relative">
-          <div className="aspect-[4/3] w-full rounded-3xl bg-gradient-to-br from-blue-800 via-blue-900 to-slate-900 shadow-2xl" />
+          <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl shadow-2xl">
+            <Image
+              src="/fixflow/hero.jpg"
+              alt="FixFlow plumber repairing a pipe under a kitchen sink"
+              fill
+              priority
+              className="object-cover"
+              sizes="(min-width: 768px) 50vw, 100vw"
+            />
+          </div>
           <div className="absolute -bottom-6 -left-6 w-48 rounded-2xl bg-white p-4 shadow-lg">
             <div className="text-2xl font-bold text-slate-900">24/7</div>
             <div className="text-xs text-slate-500">Emergency line (demo)</div>

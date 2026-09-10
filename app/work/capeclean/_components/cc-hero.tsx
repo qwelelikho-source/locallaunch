@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ShieldCheck, Leaf, Clock } from "lucide-react";
 
 export default function CcHero() {
@@ -48,7 +49,16 @@ export default function CcHero() {
         </div>
 
         <div className="relative">
-          <div className="aspect-[4/3] w-full rounded-3xl bg-gradient-to-br from-teal-200 via-teal-100 to-white shadow-inner" />
+          <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl shadow-xl">
+            <Image
+              src="/capeclean/hero.jpg"
+              alt="CapeClean cleaner mopping a bright, modern living room"
+              fill
+              priority
+              className="object-cover"
+              sizes="(min-width: 768px) 50vw, 100vw"
+            />
+          </div>
           <div className="absolute -bottom-6 -left-6 w-48 rounded-2xl bg-white p-4 shadow-lg">
             <div className="text-2xl font-bold text-slate-900">4.9/5</div>
             <div className="text-xs text-slate-500">Sample rating (demo)</div>

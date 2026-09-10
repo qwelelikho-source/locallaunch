@@ -1,8 +1,34 @@
+import Image from "next/image";
+
 const projects = [
-  { name: "Sea Point Renovation", type: "Full home renovation", duration: "12 weeks" },
-  { name: "Durbanville Extension", type: "Double-storey extension", duration: "16 weeks" },
-  { name: "Claremont New Build", type: "3-bedroom new build", duration: "9 months" },
-  { name: "Observatory Kitchen", type: "Kitchen remodel", duration: "5 weeks" },
+  {
+    name: "Sea Point Renovation",
+    type: "Full home renovation",
+    duration: "12 weeks",
+    file: "project-seapoint.jpg",
+    ratio: "719 / 330",
+  },
+  {
+    name: "Durbanville Extension",
+    type: "Double-storey extension",
+    duration: "16 weeks",
+    file: "project-durbanville.jpg",
+    ratio: "720 / 330",
+  },
+  {
+    name: "Claremont New Build",
+    type: "3-bedroom new build",
+    duration: "9 months",
+    file: "project-claremont.jpg",
+    ratio: "719 / 363",
+  },
+  {
+    name: "Observatory Kitchen",
+    type: "Kitchen remodel",
+    duration: "5 weeks",
+    file: "project-observatory.jpg",
+    ratio: "720 / 363",
+  },
 ];
 
 export default function BcProjects() {
@@ -13,25 +39,24 @@ export default function BcProjects() {
           Recent projects.
         </h2>
         <p className="mt-3 text-sm text-slate-500">
-          Illustrative examples for this concept project — real project
-          photos would go here.
+          Illustrative examples for this concept project.
         </p>
 
         <div className="mt-10 grid gap-5 sm:grid-cols-2">
-          {projects.map((p, i) => (
+          {projects.map((p) => (
             <div
               key={p.name}
               className="overflow-hidden rounded-2xl border border-slate-200 bg-white"
             >
-              <div
-                className="aspect-video"
-                style={{
-                  background:
-                    i % 2 === 0
-                      ? "linear-gradient(135deg, #1e293b, #ea580c)"
-                      : "linear-gradient(135deg, #ea580c, #1e293b)",
-                }}
-              />
+              <div className="relative w-full" style={{ aspectRatio: p.ratio }}>
+                <Image
+                  src={`/buildcore/${p.file}`}
+                  alt={p.name}
+                  fill
+                  className="object-cover"
+                  sizes="(min-width: 640px) 50vw, 100vw"
+                />
+              </div>
               <div className="p-5">
                 <h3 className="font-semibold text-slate-900">{p.name}</h3>
                 <p className="mt-1 text-sm text-slate-600">{p.type}</p>

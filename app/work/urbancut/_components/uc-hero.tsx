@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Star, MapPin, Clock } from "lucide-react";
 
 export default function UcHero() {
@@ -52,7 +53,16 @@ export default function UcHero() {
         </div>
 
         <div className="relative">
-          <div className="aspect-[4/3] w-full rounded-3xl bg-gradient-to-br from-zinc-800 via-zinc-900 to-black shadow-2xl" />
+          <div className="relative w-full overflow-hidden rounded-3xl shadow-2xl" style={{ aspectRatio: "963 / 585" }}>
+            <Image
+              src="/urbancut/hero.jpg"
+              alt="UrbanCut barber giving a client a fresh skin fade"
+              fill
+              priority
+              className="object-cover"
+              sizes="(min-width: 768px) 50vw, 100vw"
+            />
+          </div>
           <div className="absolute -bottom-6 -left-6 w-48 rounded-2xl bg-amber-500 p-4 shadow-lg">
             <div className="text-2xl font-bold text-black">R150</div>
             <div className="text-xs text-black/70">Signature cut (demo)</div>

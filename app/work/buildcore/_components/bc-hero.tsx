@@ -1,15 +1,28 @@
+import Image from "next/image";
 import { Award, Clock3, Ruler } from "lucide-react";
 
 export default function BcHero() {
   return (
-    <section id="top" className="relative overflow-hidden bg-slate-950">
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -bottom-40 left-1/2 h-96 w-[600px] -translate-x-1/2 rounded-full bg-orange-600/20 blur-[140px]"
-      />
+    <section id="top" className="bg-slate-950">
+      {/* Full-width banner photo (already carries the BuildCore logo/tagline) */}
+      <div className="relative h-[260px] w-full sm:h-[340px] md:h-[420px]">
+        <Image
+          src="/buildcore/hero.jpg"
+          alt="BuildCore team overlooking a construction site at sunset"
+          fill
+          priority
+          className="object-cover"
+          sizes="100vw"
+        />
+      </div>
 
-      <div className="mx-auto grid max-w-6xl gap-12 px-6 py-20 md:grid-cols-2 md:items-center md:py-28">
-        <div>
+      <div className="relative overflow-hidden">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -bottom-40 left-1/2 h-96 w-[600px] -translate-x-1/2 rounded-full bg-orange-600/20 blur-[140px]"
+        />
+
+        <div className="relative mx-auto max-w-3xl px-6 py-16 text-center md:py-20">
           <span className="inline-flex items-center rounded-full bg-orange-600/10 px-3 py-1 text-xs font-medium text-orange-400">
             Renovations &amp; New Builds
           </span>
@@ -18,12 +31,12 @@ export default function BcHero() {
             Projects that speak for themselves.
           </h1>
 
-          <p className="mt-5 max-w-md text-slate-300">
+          <p className="mx-auto mt-5 max-w-md text-slate-300">
             From full renovations to ground-up builds, BuildCore delivers on
             time, on budget, and built to last.
           </p>
 
-          <div className="mt-8 flex flex-wrap gap-4">
+          <div className="mt-8 flex flex-wrap justify-center gap-4">
             <a
               href="#quote"
               className="inline-flex items-center justify-center rounded-md bg-orange-600 px-6 py-3 text-sm font-semibold text-white hover:bg-orange-500"
@@ -38,7 +51,7 @@ export default function BcHero() {
             </a>
           </div>
 
-          <div className="mt-10 flex flex-wrap gap-x-8 gap-y-3 text-sm text-slate-300">
+          <div className="mt-10 flex flex-wrap justify-center gap-x-8 gap-y-3 text-sm text-slate-300">
             <span className="flex items-center gap-2">
               <Award size={16} className="text-orange-400" /> Registered &amp; insured
             </span>
@@ -50,14 +63,6 @@ export default function BcHero() {
             </span>
           </div>
           <p className="mt-2 text-xs text-slate-500">*Illustrative claim for this demo</p>
-        </div>
-
-        <div className="relative">
-          <div className="aspect-[4/3] w-full rounded-3xl bg-gradient-to-br from-slate-800 via-slate-900 to-orange-950 shadow-2xl" />
-          <div className="absolute -bottom-6 -left-6 w-52 rounded-2xl bg-white p-4 shadow-lg">
-            <div className="text-2xl font-bold text-slate-900">40+ years</div>
-            <div className="text-xs text-slate-500">Combined team experience (demo)</div>
-          </div>
         </div>
       </div>
     </section>
