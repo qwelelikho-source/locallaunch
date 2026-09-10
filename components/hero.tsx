@@ -16,7 +16,7 @@ export default function Hero() {
             Cape Town • South Africa
           </span>
 
-          <h1 className="font-display mt-6 text-5xl font-semibold leading-[1.05] text-white md:text-6xl lg:text-7xl">
+          <h1 className="font-display mt-6 text-4xl font-semibold leading-[1.1] text-white md:text-5xl">
             Your business deserves a website that works as hard as you do.
           </h1>
 

@@ -2,10 +2,10 @@ import Link from "next/link";
 import BrowserMockup from "@/components/browser-mockup";
 
 const projects = [
-  { variant: "cleaning", name: "CapeClean", tag: "Cleaning company" },
-  { variant: "plumbing", name: "FixFlow Plumbing", tag: "Plumbing company" },
-  { variant: "construction", name: "BuildCore Construction", tag: "Construction company" },
-  { variant: "barber", name: "UrbanCut", tag: "Barbershop" },
+  { variant: "cleaning", name: "CapeClean", tag: "Cleaning company", href: "/work/capeclean" },
+  { variant: "plumbing", name: "FixFlow Plumbing", tag: "Plumbing company", href: "/work" },
+  { variant: "construction", name: "BuildCore Construction", tag: "Construction company", href: "/work" },
+  { variant: "barber", name: "UrbanCut", tag: "Barbershop", href: "/work" },
 ] as const;
 
 export default function Portfolio() {
@@ -33,7 +33,7 @@ export default function Portfolio() {
                   <p className="text-sm text-ll-text-secondary">{p.tag}</p>
                 </div>
                 <Link
-                  href="/work"
+                  href={p.href}
                   className="text-sm font-medium text-ll-blue-hover hover:text-white transition-colors"
                 >
                   View project
