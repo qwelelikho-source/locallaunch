@@ -3,9 +3,9 @@ import BrowserMockup from "@/components/browser-mockup";
 
 const projects = [
   { variant: "cleaning", name: "CapeClean", tag: "Cleaning company", href: "/work/capeclean" },
-  { variant: "plumbing", name: "FixFlow Plumbing", tag: "Plumbing company", href: "/work" },
-  { variant: "construction", name: "BuildCore Construction", tag: "Construction company", href: "/work" },
-  { variant: "barber", name: "UrbanCut", tag: "Barbershop", href: "/work" },
+  { variant: "plumbing", name: "FixFlow Plumbing", tag: "Plumbing company", href: "/work/fixflow" },
+  { variant: "construction", name: "BuildCore Construction", tag: "Construction company", href: "/work/buildcore" },
+  { variant: "barber", name: "UrbanCut", tag: "Barbershop", href: "/work/urbancut" },
 ] as const;
 
 export default function Portfolio() {
