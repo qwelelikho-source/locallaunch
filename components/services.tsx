@@ -33,15 +33,17 @@ const services = [
   },
 ];
 
-export default function Services() {
+export default function Services({ showHeading = true }: { showHeading?: boolean }) {
   return (
     <section id="services" className="bg-ll-bg py-24">
       <div className="container-content">
-        <h2 className="font-display max-w-xl text-3xl font-semibold text-white md:text-4xl">
-          Everything your business needs to get online.
-        </h2>
+        {showHeading && (
+          <h2 className="font-display max-w-xl text-3xl font-semibold text-white md:text-4xl">
+            Everything your business needs to get online.
+          </h2>
+        )}
 
-        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className={`grid gap-5 sm:grid-cols-2 lg:grid-cols-3 ${showHeading ? "mt-14" : ""}`}>
           {services.map((s) => (
             <div
               key={s.title}

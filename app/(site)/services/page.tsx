@@ -20,7 +20,7 @@ export default function ServicesPage() {
           </p>
         </div>
       </section>
-      <Services />
+      <Services showHeading={false} />
       <Cta />
     </>
   );
