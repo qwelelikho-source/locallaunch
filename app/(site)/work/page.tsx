@@ -21,7 +21,7 @@ export default function WorkPage() {
           </p>
         </div>
       </section>
-      <Portfolio />
+      <Portfolio showHeading={false} />
       <Cta />
     </>
   );
