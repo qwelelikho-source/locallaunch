@@ -13,7 +13,7 @@ export default function Cta() {
           Ready to take your business online?
         </h2>
         <p className="mx-auto mt-4 max-w-md text-ll-text-secondary">
-          Tell us what you do, and we&rsquo;ll show you what your website
+          Tell me what you do, and I&rsquo;ll show you what your website
           could look like.
         </p>
 

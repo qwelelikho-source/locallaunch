@@ -3,7 +3,7 @@ import Portfolio from "@/components/portfolio";
 import Cta from "@/components/cta";
 
 export const metadata: Metadata = {
-  title: "Our Work — LocalLaunch",
+  title: "My Work — LocalLaunch",
 };
 
 export default function WorkPage() {

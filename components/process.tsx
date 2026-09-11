@@ -3,22 +3,22 @@ import Link from "next/link";
 const steps = [
   {
     n: "01",
-    title: "Tell us about your business",
-    body: "Send us your requirements through WhatsApp or our enquiry form.",
+    title: "Tell me about your business",
+    body: "Send me your requirements through WhatsApp or my enquiry form.",
   },
   {
     n: "02",
-    title: "We design",
-    body: "We create a website around your business, customers and goals.",
+    title: "I design",
+    body: "I create a website around your business, customers and goals.",
   },
   {
     n: "03",
     title: "You review",
-    body: "You give us feedback and we make the necessary changes.",
+    body: "You give me feedback and I make the necessary changes.",
   },
   {
     n: "04",
-    title: "We launch",
+    title: "I launch",
     body: "Your new website goes live and your business is ready to grow.",
   },
 ];

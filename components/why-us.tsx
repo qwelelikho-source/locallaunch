@@ -5,15 +5,15 @@ const points = [
   },
   {
     title: "Mobile-first",
-    body: "Your customers are on their phones. We design for them first.",
+    body: "Your customers are on their phones. I design for them first.",
   },
   {
     title: "Straightforward pricing",
-    body: "You know what you're paying before we start.",
+    body: "You know what you're paying before I start.",
   },
   {
     title: "Direct support",
-    body: "You're dealing directly with the people building your website.",
+    body: "You're dealing directly with me — the person building your website.",
   },
   {
     title: "You own your website",
@@ -26,7 +26,7 @@ export default function WhyUs() {
     <section className="bg-ll-card py-24">
       <div className="container-content">
         <h2 className="font-display max-w-xl text-3xl font-semibold text-white md:text-4xl">
-          We&rsquo;re not here to just build you a website.
+          I&rsquo;m not here to just build you a website.
         </h2>
 
         <div className="mt-14 grid gap-x-10 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">

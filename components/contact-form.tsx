@@ -19,7 +19,7 @@ export default function ContactForm() {
           Thanks — got it.
         </h2>
         <p className="mt-2 text-sm text-ll-text-secondary">
-          We&rsquo;ll be in touch within 24 hours with your free quote.
+          I&rsquo;ll be in touch within 24 hours with your free quote.
         </p>
       </div>
     );
@@ -49,7 +49,7 @@ export default function ContactForm() {
             rows={4}
             required
             className="w-full rounded-md border border-white/10 bg-ll-bg px-3.5 py-2.5 text-sm text-white placeholder:text-white/30 focus:border-ll-blue focus:outline-none"
-            placeholder="Tell us about your business and what kind of website you're looking for."
+            placeholder="Tell me about your business and what kind of website you're looking for."
           />
         </div>
 

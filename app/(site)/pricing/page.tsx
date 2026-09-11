@@ -16,7 +16,7 @@ export default function PricingPage() {
           </h1>
           <p className="mt-4 max-w-lg text-ll-text-secondary">
             No hidden costs. You know exactly what you&rsquo;re paying for
-            before we start.
+            before I start.
           </p>
         </div>
       </section>

@@ -40,8 +40,16 @@ export default function Footer() {
           <h4 className="text-sm font-medium text-white">Contact</h4>
           <ul className="mt-4 space-y-2.5 text-sm text-ll-text-secondary">
             <li>Cape Town, South Africa</li>
-            <li><a href="#" className="hover:text-white transition-colors">WhatsApp</a></li>
-            <li><a href="#" className="hover:text-white transition-colors">Email</a></li>
+            <li>
+              <a href="https://wa.me/27672277990" className="hover:text-white transition-colors">
+                +27 67 227 7990
+              </a>
+            </li>
+            <li>
+              <a href="mailto:likho.locallaunch@gmail.com" className="hover:text-white transition-colors">
+                likho.locallaunch@gmail.com
+              </a>
+            </li>
             <li><a href="#" className="hover:text-white transition-colors">Instagram</a></li>
             <li><a href="#" className="hover:text-white transition-colors">LinkedIn</a></li>
           </ul>
