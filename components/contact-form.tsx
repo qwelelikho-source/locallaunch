@@ -2,25 +2,78 @@
 
 import { useState } from "react";
 
+const WHATSAPP_NUMBER = "27672277990";
+// Replace this with your real Formspree form ID (from https://formspree.io/f/YOUR_ID)
+const FORMSPREE_ID = "meaqwjbv";
+
 export default function ContactForm() {
-  const [status, setStatus] = useState<"idle" | "sent">("idle");
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const [waLink, setWaLink] = useState<string | null>(null);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    // TODO: wire this up to an API route, Supabase table, or a form
-    // service (e.g. Formspree) so submissions actually reach you.
+    setStatus("sending");
+
+    const formEl = e.currentTarget;
+    const form = new FormData(formEl);
+    const name = (form.get("name") as string) || "";
+    const business = (form.get("business") as string) || "";
+    const email = (form.get("email") as string) || "";
+    const phone = (form.get("phone") as string) || "";
+    const message = (form.get("message") as string) || "";
+
+    // Build the pre-filled WhatsApp message
+    const waText = [
+      `New quote request from ${name}`,
+      business && `Business: ${business}`,
+      email && `Email: ${email}`,
+      phone && `Their WhatsApp: ${phone}`,
+      "",
+      message,
+    ]
+      .filter(Boolean)
+      .join("\n");
+    const link = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(waText)}`;
+    setWaLink(link);
+
+    // Send a copy to email via Formspree, so nothing gets lost even if
+    // the visitor never taps send in WhatsApp.
+    try {
+      await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: form,
+      });
+    } catch {
+      // Even if the email fails, still let them through to WhatsApp —
+      // don't block the visitor on a backend hiccup.
+    }
+
     setStatus("sent");
+    window.open(link, "_blank");
   }
 
   if (status === "sent") {
     return (
       <div className="rounded-card border border-white/10 bg-ll-card p-8">
         <h2 className="font-display text-lg font-semibold text-white">
-          Thanks — got it.
+          Almost there — check WhatsApp.
         </h2>
         <p className="mt-2 text-sm text-ll-text-secondary">
-          I&rsquo;ll be in touch within 24 hours with your free quote.
+          I&rsquo;ve opened WhatsApp with your details filled in, and a copy
+          has also been emailed to me. Just hit send in WhatsApp and
+          I&rsquo;ll get back to you within 24 hours.
         </p>
+        {waLink && (
+          
+            href={waLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-4 inline-flex items-center rounded-md bg-ll-blue px-5 py-2.5 text-sm font-medium text-white hover:bg-ll-blue-hover transition-colors"
+          >
+            Didn&rsquo;t open? Click here
+          </a>
+        )}
       </div>
     );
   }
@@ -55,10 +108,14 @@ export default function ContactForm() {
 
         <button
           type="submit"
-          className="w-full rounded-md bg-ll-blue px-5 py-3 text-sm font-medium text-white hover:bg-ll-blue-hover transition-colors"
+          disabled={status === "sending"}
+          className="w-full rounded-md bg-ll-blue px-5 py-3 text-sm font-medium text-white hover:bg-ll-blue-hover transition-colors disabled:opacity-60"
         >
-          Send my details
+          {status === "sending" ? "Sending..." : "Send my details"}
         </button>
+        <p className="text-center text-xs text-ll-text-secondary">
+          Sends me an email and opens WhatsApp with your details pre-filled.
+        </p>
       </div>
     </form>
   );
