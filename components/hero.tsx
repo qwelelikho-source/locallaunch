@@ -17,7 +17,7 @@ export default function Hero() {
           </span>
 
           <h1 className="font-display mt-6 text-4xl font-semibold leading-[1.1] text-white md:text-5xl">
-            Your business deserves a website that works as hard as you do.
+            Websites that turn local businesses into online businesses.
           </h1>
 
           <p className="mt-6 max-w-md text-base leading-relaxed text-ll-text-secondary">
