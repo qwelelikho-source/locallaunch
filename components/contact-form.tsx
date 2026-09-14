@@ -3,11 +3,10 @@
 import { useState } from "react";
 
 const WHATSAPP_NUMBER = "27672277990";
-// Replace this with your real Formspree form ID (from https://formspree.io/f/YOUR_ID)
 const FORMSPREE_ID = "meaqwjbv";
 
 export default function ContactForm() {
-  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const [status, setStatus] = useState("idle" as "idle" | "sending" | "sent" | "error");
   const [waLink, setWaLink] = useState<string | null>(null);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -22,7 +21,6 @@ export default function ContactForm() {
     const phone = (form.get("phone") as string) || "";
     const message = (form.get("message") as string) || "";
 
-    // Build the pre-filled WhatsApp message
     const waText = [
       `New quote request from ${name}`,
       business && `Business: ${business}`,
@@ -36,8 +34,6 @@ export default function ContactForm() {
     const link = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(waText)}`;
     setWaLink(link);
 
-    // Send a copy to email via Formspree, so nothing gets lost even if
-    // the visitor never taps send in WhatsApp.
     try {
       await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
         method: "POST",
@@ -45,8 +41,7 @@ export default function ContactForm() {
         body: form,
       });
     } catch {
-      // Even if the email fails, still let them through to WhatsApp —
-      // don't block the visitor on a backend hiccup.
+      // Even if the email fails, still let them through to WhatsApp.
     }
 
     setStatus("sent");
@@ -57,7 +52,7 @@ export default function ContactForm() {
     return (
       <div className="rounded-card border border-white/10 bg-ll-card p-8">
         <h2 className="font-display text-lg font-semibold text-white">
-          Almost there — check WhatsApp.
+          Almost there - check WhatsApp.
         </h2>
         <p className="mt-2 text-sm text-ll-text-secondary">
           I&rsquo;ve opened WhatsApp with your details filled in, and a copy
@@ -65,7 +60,7 @@ export default function ContactForm() {
           I&rsquo;ll get back to you within 24 hours.
         </p>
         {waLink && (
-          
+          <a
             href={waLink}
             target="_blank"
             rel="noopener noreferrer"
