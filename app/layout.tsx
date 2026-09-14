@@ -16,9 +16,43 @@ const space = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "LocalLaunch — Websites that turn local businesses into online businesses",
+  metadataBase: new URL("https://locallaunch-tau.vercel.app"),
+
+  title: {
+    default: "LocalLaunch | Website Design for Local Businesses",
+    template: "%s | LocalLaunch",
+  },
+
   description:
-    "We build fast, modern websites for local businesses in Cape Town that help you get found, build trust and turn visitors into customers.",
+    "LocalLaunch builds modern, mobile-friendly websites for local businesses in Cape Town and across South Africa.",
+
+  keywords: [
+    "web design Cape Town",
+    "website design Cape Town",
+    "web developer Cape Town",
+    "business websites Cape Town",
+    "website development South Africa",
+    "local business websites",
+    "small business web design",
+  ],
+
+  authors: [{ name: "LocalLaunch" }],
+  creator: "LocalLaunch",
+
+  openGraph: {
+    title: "LocalLaunch | Websites for Local Businesses",
+    description:
+      "Modern, professional websites designed to help local businesses get found, build trust and get more customers.",
+    url: "https://locallaunch-tau.vercel.app",
+    siteName: "LocalLaunch",
+    locale: "en_ZA",
+    type: "website",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({

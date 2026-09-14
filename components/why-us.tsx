@@ -21,15 +21,17 @@ const points = [
   },
 ];
 
-export default function WhyUs() {
+export default function WhyUs({ showHeading = true }: { showHeading?: boolean }) {
   return (
     <section className="bg-ll-card py-24">
       <div className="container-content">
-        <h2 className="font-display max-w-xl text-3xl font-semibold text-white md:text-4xl">
-          I&rsquo;m not here to just build you a website.
-        </h2>
+        {showHeading && (
+          <h2 className="font-display max-w-xl text-3xl font-semibold text-white md:text-4xl">
+            I&rsquo;m not here to just build you a website.
+          </h2>
+        )}
 
-        <div className="mt-14 grid gap-x-10 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+        <div className={`grid gap-x-10 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 ${showHeading ? "mt-14" : ""}`}>
           {points.map((p) => (
             <div key={p.title} className="border-l-2 border-ll-blue pl-5">
               <h3 className="font-display text-base font-semibold text-white">

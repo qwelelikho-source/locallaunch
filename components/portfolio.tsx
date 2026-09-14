@@ -67,7 +67,7 @@ export default function Portfolio({ showHeading = true }: { showHeading?: boolea
                   <div className="relative w-full overflow-hidden" style={{ aspectRatio: "1440 / 900" }}>
                     <Image
                       src={p.screenshot}
-                      alt={`${p.name} homepage screenshot`}
+                      alt={`${p.name} ${p.tag.toLowerCase()} website concept, Cape Town`}
                       fill
                       className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
                       sizes="(min-width: 768px) 50vw, 100vw"

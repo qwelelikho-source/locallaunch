@@ -3,7 +3,9 @@ import Portfolio from "@/components/portfolio";
 import Cta from "@/components/cta";
 
 export const metadata: Metadata = {
-  title: "My Work — LocalLaunch",
+  title: "Website Design Portfolio",
+  description:
+    "See concept website designs built by LocalLaunch for Cape Town businesses across cleaning, plumbing, construction and barbershop industries.",
 };
 
 export default function WorkPage() {

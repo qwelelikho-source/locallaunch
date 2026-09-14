@@ -3,7 +3,9 @@ import WhyUs from "@/components/why-us";
 import Cta from "@/components/cta";
 
 export const metadata: Metadata = {
-  title: "About — LocalLaunch",
+  title: "About | Cape Town Web Developer",
+  description:
+    "LocalLaunch is a Cape Town-based web developer building modern, mobile-first websites for small and growing local businesses.",
 };
 
 export default function AboutPage() {
@@ -41,7 +43,7 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-      <WhyUs />
+      <WhyUs showHeading={false} />
       <Cta />
     </>
   );

@@ -3,7 +3,9 @@ import Services from "@/components/services";
 import Cta from "@/components/cta";
 
 export const metadata: Metadata = {
-  title: "Services — LocalLaunch",
+  title: "Website Design & Development Services",
+  description:
+    "Professional website design, mobile-first development, local SEO and WhatsApp integration for local businesses in Cape Town.",
 };
 
 export default function ServicesPage() {

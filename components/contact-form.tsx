@@ -3,10 +3,11 @@
 import { useState } from "react";
 
 const WHATSAPP_NUMBER = "27672277990";
+// Replace this with your real Formspree form ID (from https://formspree.io/f/YOUR_ID)
 const FORMSPREE_ID = "meaqwjbv";
 
 export default function ContactForm() {
-  const [status, setStatus] = useState("idle" as "idle" | "sending" | "sent" | "error");
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const [waLink, setWaLink] = useState<string | null>(null);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -21,6 +22,7 @@ export default function ContactForm() {
     const phone = (form.get("phone") as string) || "";
     const message = (form.get("message") as string) || "";
 
+    // Build the pre-filled WhatsApp message
     const waText = [
       `New quote request from ${name}`,
       business && `Business: ${business}`,
@@ -34,6 +36,8 @@ export default function ContactForm() {
     const link = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(waText)}`;
     setWaLink(link);
 
+    // Send a copy to email via Formspree, so nothing gets lost even if
+    // the visitor never taps send in WhatsApp.
     try {
       await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
         method: "POST",
@@ -41,7 +45,8 @@ export default function ContactForm() {
         body: form,
       });
     } catch {
-      // Even if the email fails, still let them through to WhatsApp.
+      // Even if the email fails, still let them through to WhatsApp -
+      // don't block the visitor on a backend hiccup.
     }
 
     setStatus("sent");

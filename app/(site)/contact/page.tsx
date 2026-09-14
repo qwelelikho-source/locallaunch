@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import ContactForm from "@/components/contact-form";
 
 export const metadata: Metadata = {
-  title: "Get a Free Quote — LocalLaunch",
+  title: "Get a Website Quote",
+  description:
+    "Get a free, no-obligation website quote from LocalLaunch. Tell me about your Cape Town business and I'll get back to you within 24 hours.",
 };
 
 export default function ContactPage() {

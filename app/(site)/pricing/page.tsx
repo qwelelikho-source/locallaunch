@@ -3,7 +3,9 @@ import Pricing from "@/components/pricing";
 import Cta from "@/components/cta";
 
 export const metadata: Metadata = {
-  title: "Pricing — LocalLaunch",
+  title: "Website Design Pricing in Cape Town",
+  description:
+    "Straightforward, affordable website pricing for Cape Town small businesses. No hidden costs — know exactly what you're paying for before I start.",
 };
 
 export default function PricingPage() {

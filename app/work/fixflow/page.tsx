@@ -8,9 +8,9 @@ import FfQuoteForm from "./_components/ff-quote-form";
 import FfFooter from "./_components/ff-footer";
 
 export const metadata: Metadata = {
-  title: "FixFlow Plumbing — concept project by LocalLaunch",
+  title: "Plumbing Website Concept",
   description:
-    "A concept plumbing-company website built by LocalLaunch to demonstrate what a real client site could look like.",
+    "A modern plumbing business website concept designed by LocalLaunch with services, WhatsApp contact and quote functionality.",
 };
 
 export default function FixFlowPage() {

@@ -8,9 +8,9 @@ import CcQuoteForm from "./_components/cc-quote-form";
 import CcFooter from "./_components/cc-footer";
 
 export const metadata: Metadata = {
-  title: "CapeClean — concept project by LocalLaunch",
+  title: "CapeClean Website Concept",
   description:
-    "A concept cleaning-company website built by LocalLaunch to demonstrate what a real client site could look like.",
+    "A modern cleaning company website concept designed by LocalLaunch for a Cape Town cleaning business.",
 };
 
 export default function CapeCleanPage() {

@@ -8,9 +8,9 @@ import UcBookingForm from "./_components/uc-booking-form";
 import UcFooter from "./_components/uc-footer";
 
 export const metadata: Metadata = {
-  title: "UrbanCut — concept project by LocalLaunch",
+  title: "Barbershop Website Concept",
   description:
-    "A concept barbershop website built by LocalLaunch to demonstrate what a real client site could look like.",
+    "A modern barbershop website concept designed by LocalLaunch with online booking, price list and style gallery.",
 };
 
 export default function UrbanCutPage() {

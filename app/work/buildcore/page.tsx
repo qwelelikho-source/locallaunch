@@ -9,9 +9,9 @@ import BcQuoteForm from "./_components/bc-quote-form";
 import BcFooter from "./_components/bc-footer";
 
 export const metadata: Metadata = {
-  title: "BuildCore Construction — concept project by LocalLaunch",
+  title: "Construction Company Website Concept",
   description:
-    "A concept construction-company website built by LocalLaunch to demonstrate what a real client site could look like.",
+    "A modern construction company website concept designed by LocalLaunch with project showcase, quote form and process timeline.",
 };
 
 export default function BuildCorePage() {

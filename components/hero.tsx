@@ -21,7 +21,7 @@ export default function Hero() {
           </h1>
 
           <p className="mt-6 max-w-md text-base leading-relaxed text-ll-text-secondary">
-            I build fast, modern websites for local businesses that help you
+            I build fast, modern websites for Cape Town businesses that help you
             get found, build trust and turn visitors into customers.
           </p>
 
